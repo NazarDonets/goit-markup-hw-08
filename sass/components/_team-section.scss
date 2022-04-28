@@ -1,0 +1,58 @@
+@use "../utils/variables";
+
+.team {
+	display: flex;
+	justify-content: space-between;
+}
+
+.team__item {
+	background: variables.$color-white;
+	box-shadow: variables.$box-shadow-card-popup;
+	text-align: center;
+}
+
+.team__info {
+	padding: 30px 32px;
+}
+
+.team__title {
+	margin-bottom: 16px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.18;
+	color: variables.$color-dark-grey;
+}
+
+.team__description {
+	margin-bottom: 10px;
+	font-size: 16px;
+	line-height: 1.18;
+	color: variables.$color-light-grey;
+}
+
+.socials__list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.socials__link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	color: variables.$color-icon-team-inactive;
+	transition: background-color variables.$animation-type1, color variables.$animation-type1;
+
+	&:hover,
+	&:focus {
+		background-color: variables.$color-brand;
+		color: variables.$color-white;
+	}
+}
+
+.socials__icon {
+	width: 20px;
+	height: 20px;
+}

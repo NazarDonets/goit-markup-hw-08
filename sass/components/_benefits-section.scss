@@ -1,0 +1,45 @@
+@use "../utils/variables";
+
+.benefits {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 100%;
+}
+
+.benefits__item {
+	max-width: 270px;
+
+	&:not(:last-child) {
+		margin-right: 30px;
+	}
+}
+
+.benefits__icon-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 120px;
+	margin-bottom: 30px;
+	background-color: variables.$color-section-alternate-bg;
+	border-radius: 4px;
+}
+
+.benefits__icon {
+	display: block;
+	width: 70px;
+	height: 70px;
+}
+
+.benefits__title {
+	margin-bottom: 10px;
+	font-weight: 700;
+	line-height: 1.14;
+	text-transform: uppercase;
+	color: variables.$color-dark-grey;
+}
+
+.benefits__description {
+	margin: 0;
+	color: variables.$color-light-grey;
+}

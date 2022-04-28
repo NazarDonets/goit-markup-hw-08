@@ -1,0 +1,106 @@
+@use "../utils/variables";
+
+.portfolio-filters__list {
+	display: flex;
+	align-items: center;
+	margin-bottom: 50px;
+	justify-content: center;
+}
+
+.portfolio-filters__item:not(:last-child) {
+	margin-right: 8px;
+}
+
+.portfolio-filters__button {
+	padding: 6px 22px;
+	background-color: variables.$color-section-alternate-bg;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.62;
+	letter-spacing: 0.03em;
+	color: variables.$color-dark-grey;
+	border: none;
+	border-radius: 4px;
+	transition: color variables.$animation-type1, background-color variables.$animation-type1,
+		box-shadow variables.$animation-type1;
+
+	&:hover,
+	&:focus {
+		background-color: variables.$color-brand;
+		color: variables.$color-white;
+		box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+			0px 2px 2px rgba(0, 0, 0, 0.12);
+		border-radius: 4px;
+		cursor: pointer;
+	}
+}
+
+.portfolio-projects__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.portfolio-projects__item {
+	max-width: 370px;
+
+	&:not(:nth-last-child(-n + 3)) {
+		margin-bottom: 30px;
+	}
+}
+
+.portfolio-projects__link {
+	display: block;
+	transition: box-shadow variables.$animation-type1;
+
+	&:hover,
+	&:focus {
+		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+			1px 4px 6px rgba(0, 0, 0, 0.16);
+
+		& .potfolio-projects__hidden-description {
+			transform: translateY(-294px);
+		}
+	}
+}
+
+.portfolio-projects__animated-block {
+	overflow: hidden;
+	height: 294px;
+}
+
+.potfolio-projects__hidden-description {
+	display: flex;
+	align-items: center;
+	height: 294px;
+	padding: 0 24px;
+	background-color: rgba(33, 150, 243, 0.9);
+	color: variables.$color-white;
+	font-size: 18px;
+	line-height: 1.55;
+	transition: transform variables.$animation-type1;
+}
+
+.portfolio-projects__content-box {
+	padding: 20px 24px;
+	border-right: 1px solid variables.$color-light-grey-2;
+	border-bottom: 1px solid variables.$color-light-grey-2;
+	border-left: 1px solid variables.$color-light-grey-2;
+}
+
+.portfolio-projects__title {
+	margin: 0;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 2;
+	letter-spacing: 0.06em;
+	color: variables.$color-dark-grey;
+}
+
+.portfolio-projects__description {
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.88;
+	letter-spacing: 0.03em;
+	color: variables.$color-light-grey;
+}
