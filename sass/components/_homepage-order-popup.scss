@@ -1,4 +1,4 @@
-@use "../utils/variables";
+@use '../utils/variables' as v;
 
 .backdrop-area {
 	position: fixed;
@@ -9,9 +9,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: variables.$color-backdrop-overlay;
+	background-color: v.$color-backdrop-overlay;
 	opacity: 1;
-	transition: opacity variables.$animation-type1;
+	transition: opacity v.$animation-type1;
 }
 
 .backdrop-area--hidden {
@@ -23,19 +23,19 @@
 	position: relative;
 	max-width: 528px;
 	padding: 40px;
-	background: variables.$color-white;
-	box-shadow: variables.$box-shadow-card-popup;
+	background: v.$color-white;
+	box-shadow: v.$box-shadow-card-popup;
 	border-radius: 4px;
 }
 
 .backdrop-area.backdrop-area--hidden > .order-popup {
 	transform: scale(0.5);
-	transition: transform variables.$animation-type1;
+	transition: transform v.$animation-type1;
 }
 
 .backdrop-area > .order-popup {
 	transform: scale(1);
-	transition: transform variables.$animation-type1;
+	transition: transform v.$animation-type1;
 }
 
 .order-popup__btn-close {
@@ -45,19 +45,19 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: variables.$color-white;
+	background: v.$color-white;
 	width: 30px;
 	height: 30px;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	box-sizing: border-box;
 	border-radius: 50%;
 	cursor: pointer;
-	transition: background-color variables.$animation-type1, color variables.$animation-type1;
+	transition: background-color v.$animation-type1, color v.$animation-type1;
 
 	&:hover,
 	&:focus {
-		background-color: variables.$color-brand;
-		color: variables.$color-white;
+		background-color: v.$color-brand;
+		color: v.$color-white;
 	}
 }
 
@@ -87,15 +87,15 @@
 	padding-left: 42px;
 	border: 1px solid rgba(33, 33, 33, 0.2);
 	border-radius: 4px;
-	transition: border-color variables.$animation-type1;
+	transition: border-color v.$animation-type1;
 
 	&:hover {
-		border-color: variables.$color-brand;
+		border-color: v.$color-brand;
 	}
 
 	&:focus-within {
 		outline: none;
-		border-color: variables.$color-brand;
+		border-color: v.$color-brand;
 	}
 }
 
@@ -105,14 +105,14 @@
 	font-size: 12px;
 	line-height: 1.16;
 	letter-spacing: 0.01em;
-	color: variables.$color-light-grey;
-	transition: color variables.$animation-type1, transform variables.$animation-type1;
+	color: v.$color-light-grey;
+	transition: color v.$animation-type1, transform v.$animation-type1;
 }
 
 .order-form__input-field:focus-within ~ .order-form__input-icon,
 .order-form__input-field:focus-within ~ .order-form__input-label,
 .order-form__textarea-field:focus-within ~ .order-form__textarea-label {
-	color: variables.$color-brand;
+	color: v.$color-brand;
 }
 
 .order-form__input-field:focus-within + .order-form__input-label,
@@ -122,7 +122,7 @@
 }
 
 .order-form__input-field::placeholder {
-	transition: opacity variables.$animation-type1;
+	transition: opacity v.$animation-type1;
 }
 
 .order-form__input-field:not(:focus-within)::placeholder {
@@ -133,7 +133,7 @@
 	position: absolute;
 	left: 12px;
 	top: 11px;
-	transition: color variables.$animation-type1;
+	transition: color v.$animation-type1;
 }
 
 .order-form__textarea-field {
@@ -144,15 +144,15 @@
 	border: 1px solid rgba(33, 33, 33, 0.2);
 	border-radius: 4px;
 	resize: none;
-	transition: border-color variables.$animation-type1;
+	transition: border-color v.$animation-type1;
 
 	&:hover {
-		border-color: variables.$color-brand;
+		border-color: v.$color-brand;
 	}
 
 	&:focus-within {
 		outline: none;
-		border-color: variables.$color-brand;
+		border-color: v.$color-brand;
 	}
 }
 
@@ -193,9 +193,9 @@
 	place-content: center;
 	width: 16px;
 	height: 15px;
-	background-color: variables.$color-white;
+	background-color: v.$color-white;
 	margin-right: 7px;
-	border: 2px solid variables.$color-dark-grey;
+	border: 2px solid v.$color-dark-grey;
 	border-radius: 2px;
 	transform: translateY(-1px);
 
@@ -205,17 +205,17 @@
 		width: 16px;
 		height: 15px;
 		transform: scale(0);
-		background-color: variables.$color-brand;
+		background-color: v.$color-brand;
 		background-size: 11px;
 		background-position: center;
 		background-repeat: no-repeat;
 		border-radius: 2px;
-		transition: transform variables.$animation-type1;
+		transition: transform v.$animation-type1;
 	}
 
 	&:checked::before {
 		background-image: url("data:image/svg+xml,%3Csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.95703 4.75166L1.88825 4.68604L1.81923 4.75141L0.93123 5.59258L0.854858 5.66492L0.930974 5.73753L4.42671 9.07236L4.49574 9.1382L4.56476 9.07236L12.069 1.91352L12.1449 1.84116L12.069 1.76881L11.1873 0.927644L11.1183 0.861826L11.0493 0.927611L4.49577 7.17353L1.95703 4.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E%0A");
-		border-color: variables.$color-dark-grey;
+		border-color: v.$color-dark-grey;
 		transform: scale(1);
 	}
 }
@@ -225,10 +225,10 @@
 	font-size: 14px;
 	line-height: 1.71;
 	letter-spacing: 0.03em;
-	color: variables.$color-light-grey;
+	color: v.$color-light-grey;
 }
 
 .order-form__consent-link {
-	color: variables.$color-brand;
+	color: v.$color-brand;
 	text-decoration: underline;
 }
