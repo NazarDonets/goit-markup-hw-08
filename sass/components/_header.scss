@@ -1,9 +1,20 @@
-@use "../utils/variables";
+@use '../utils/variables' as v;
+@use '../utils/breakpoints' as *;
 
 .header {
-	height: 80px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 60px;
 	border-bottom: 1px solid #ececec;
 	box-sizing: border-box;
+
+	background-color: v.$color-white;
+
+	@include desktop-sm {
+		height: 80px;
+	}
 }
 
 .header__container {
@@ -19,21 +30,29 @@
 	align-items: center;
 }
 
+.header-nav__list {
+	display: none;
+
+	@include desktop-sm {
+		display: flex;
+	}
+}
+
 .logo {
 	display: block;
-	margin-right: 93px;
-	font-family: variables.$font-logo;
+	margin-right: 83px;
+	font-family: v.$font-logo;
 	font-weight: 700;
 	font-size: 26px;
 	line-height: 1.19;
-	color: variables.$color-brand;
+	color: v.$color-brand;
 
 	&--black {
-		color: variables.$color-dark-grey;
+		color: v.$color-dark-grey;
 	}
 
 	&--white {
-		color: variables.$color-white;
+		color: v.$color-white;
 	}
 }
 
@@ -44,16 +63,16 @@
 	font-size: 14px;
 	line-height: 1.14;
 	letter-spacing: 0.02em;
-	color: variables.$color-dark-grey;
-	transition: color variables.$animation-type1;
+	color: v.$color-dark-grey;
+	transition: color v.$animation-type1;
 
 	&:hover,
 	&:focus {
-		color: variables.$color-brand;
+		color: v.$color-brand;
 	}
 
 	&--active {
-		color: variables.$color-brand;
+		color: v.$color-brand;
 
 		&::after {
 			content: '';
@@ -62,14 +81,34 @@
 			width: 100%;
 			height: 4px;
 			bottom: -33px;
-			background-color: variables.$color-brand;
+			background-color: v.$color-brand;
 			border-radius: 2px;
 		}
 	}
 }
 
 .header-contacts {
-	margin-left: auto;
+	display: none;
+
+	@include desktop-sm {
+		display: flex;
+		flex-wrap: wrap;
+		width: min-content;
+		margin-left: auto;
+	}
+
+	@include desktop-bg {
+		flex-wrap: nowrap;
+		width: auto;
+	}
+}
+
+.header-contacts__item {
+	@include desktop-bg {
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
 }
 
 .header-contacts__link {
@@ -78,12 +117,12 @@
 	font-weight: 500;
 	line-height: 1.14;
 	letter-spacing: 0.02em;
-	color: variables.$color-light-grey;
-	transition: color variables.$animation-type1;
+	color: v.$color-light-grey;
+	transition: color v.$animation-type1;
 
 	&:hover,
 	&:focus {
-		color: variables.$color-brand;
+		color: v.$color-brand;
 	}
 }
 
@@ -92,7 +131,77 @@
 	color: inherit;
 }
 
-.header-nav__item:not(:last-child),
-.header-contacts__item:not(:last-child) {
+.header-nav__item:not(:last-child) {
 	margin-right: 50px;
+}
+
+// hamburger menu
+
+.hamburger-checkbox {
+	position: absolute;
+	display: block;
+	height: 32px;
+	width: 32px;
+	top: 20px;
+	right: 15px;
+	z-index: 5;
+	opacity: 0;
+	cursor: pointer;
+
+	@include desktop-sm {
+		display: none;
+	}
+}
+
+.hamburger-lines {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 26px;
+	width: 32px;
+	position: absolute;
+	top: 17px;
+	right: 15px;
+	z-index: 2;
+
+	@include desktop-sm {
+		display: none;
+	}
+}
+
+.hamburger-lines .line {
+	display: block;
+	height: 4px;
+	width: 100%;
+	background: v.$color-dark-grey;
+}
+
+.hamburger-lines .line1 {
+	transform-origin: 0% 0%;
+	transition: v.$animation-type1;
+}
+
+.hamburger-lines .line2 {
+	transition: transform 0.2s ease-in-out;
+}
+
+.hamburger-lines .line3 {
+	transform-origin: 0% 100%;
+	transition: v.$animation-type1;
+}
+
+input[type='checkbox']:checked ~ .menu-items {
+	transform: translateX(0);
+}
+
+input[type='checkbox']:checked ~ .hamburger-lines .line1 {
+	transform: rotate(45deg);
+}
+
+input[type='checkbox']:checked ~ .hamburger-lines .line2 {
+	transform: scaleY(0);
+}
+
+input[type='checkbox']:checked ~ .hamburger-lines .line3 {
+	transform: rotate(-45deg);
 }

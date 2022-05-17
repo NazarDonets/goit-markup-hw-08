@@ -1,14 +1,27 @@
-@use "../utils/variables";
+@use '../utils/variables' as v;
+@use '../utils/breakpoints' as *;
 
 body {
 	padding: 0;
 	margin: 0;
-	font-family: variables.$font-main;
+	font-family: v.$font-main;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 1.7;
 	letter-spacing: 0.03em;
+}
+
+.body--scroll-hidden {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	overflow-y: hidden;
+}
+
+main {
+	@include mobile {
+		margin-top: 60px;
+	}
 }
 
 h1,
@@ -35,6 +48,7 @@ a {
 img {
 	display: block;
 	width: 100%;
+	height: auto;
 }
 
 .container {
@@ -46,23 +60,33 @@ img {
 }
 
 .section {
-	padding-top: 94px;
-	padding-bottom: 94px;
+	padding-top: 60px;
+	padding-bottom: 60px;
 
-	&__title {
-		font-weight: 700;
+	@include desktop-bg {
+		padding-top: 94px;
+		padding-bottom: 94px;
+	}
+}
+
+.section__title {
+	font-weight: 700;
+	font-size: 28px;
+	line-height: 1.16;
+	text-align: center;
+	margin: 0 0 30px 0;
+
+	@include desktop-bg {
 		font-size: 36px;
-		line-height: 1.16;
-		text-align: center;
-		margin: 0 0 50px 0;
+		margin-bottom: 50px;
 	}
 }
 
 .btn-main-cta {
 	width: 200px;
 	height: 50px;
-	background-color: variables.$color-brand;
-	color: variables.$color-white;
+	background-color: v.$color-brand;
+	color: v.$color-white;
 	font-size: 16px;
 	font-weight: 700;
 	letter-spacing: 0.06em;
@@ -71,7 +95,7 @@ img {
 	border-radius: 4px;
 	border: none;
 	cursor: pointer;
-	transition: background-color variables.$animation-type1;
+	transition: background-color v.$animation-type1;
 
 	&--with-icon {
 		display: flex;
@@ -81,6 +105,6 @@ img {
 
 	&:hover,
 	&:focus {
-		background-color: variables.$color-brand-hover;
+		background-color: v.$color-brand-hover;
 	}
 }

@@ -22,7 +22,7 @@
 
 		<link rel="stylesheet" href="./src/css/main.min.css" />
 	</head>
-	<body>
+	<body data-body>
 		<header class="header">
 			<div class="container header__container">
 				<nav class="header-nav">
@@ -63,15 +63,75 @@
 						>
 					</li>
 				</ul>
+				<input
+					class="hamburger-checkbox"
+					type="checkbox"
+					name=""
+					id=""
+					data-menu-button
+				/>
+				<div class="hamburger-lines">
+					<span class="line line1"></span>
+					<span class="line line2"></span>
+					<span class="line line3"></span>
+				</div>
+				<div class="mobile-menu" data-menu>
+					<nav class="mobile-menu__nav">
+						<ul class="mobile-menu__nav-list">
+							<li class="mobile-menu__nav-item">
+								<a
+									href="./index.html"
+									class="mobile-menu__nav-link mobile-menu__nav-link--active"
+									>Студия</a
+								>
+							</li>
+							<li class="mobile-menu__nav-item">
+								<a href="./portfolio.html" class="mobile-menu__nav-link"
+									>Портфолио</a
+								>
+							</li>
+							<li class="mobile-menu__nav-item">
+								<a href="#" class="mobile-menu__nav-link">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+					<ul class="mobile-menu__contacts-list">
+						<li class="mobile-menu__contacts-item">
+							<a
+								href="tel:+380961111111"
+								class="mobile-menu__contacts-link mobile-menu__contacts-link--phone"
+								>+38 096 111 11 11</a
+							>
+						</li>
+						<li class="mobile-menu__contacts-item">
+							<a
+								href="mailto:info@devstudio.com"
+								class="mobile-menu__contacts-link"
+								>info@devstudio.com</a
+							>
+						</li>
+					</ul>
+					<ul class="mobile-menu__socials-list">
+						<li class="mobile-menu__socials-item">
+							<a href="#" class="mobile-menu__socials-link">Instagram</a>
+						</li>
+						<li class="mobile-menu__socials-item">
+							<a href="#" class="mobile-menu__socials-link">Twitter</a>
+						</li>
+						<li class="mobile-menu__socials-item">
+							<a href="#" class="mobile-menu__socials-link">Facebook</a>
+						</li>
+						<li class="mobile-menu__socials-item">
+							<a href="#" class="mobile-menu__socials-link">LinkedIn</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</header>
 		<main>
 			<section class="hero">
-				<div class="container">
-					<h1 class="hero__title">
-						Эффективные решения <br />
-						для вашего бизнеса
-					</h1>
+				<div class="container container__hero">
+					<h1 class="hero__title">Эффективные решения для вашего бизнеса</h1>
 					<button class="btn-main-cta" type="button" data-modal-open>
 						Заказать услугу
 					</button>
@@ -180,8 +240,6 @@
 								class="team__image"
 								src="./images/igor.jpg"
 								alt="Игорь Демьяненко"
-								width="270"
-								height="260"
 							/>
 							<div class="team__info">
 								<h3 class="team__title">Игорь Демьяненко</h3>
@@ -223,8 +281,6 @@
 								class="team__image"
 								src="./images/olga.jpg"
 								alt="Ольга Репина"
-								width="270"
-								height="260"
 							/>
 							<div class="team__info">
 								<h3 class="team__title">Ольга Репина</h3>
@@ -266,8 +322,6 @@
 								class="team__image"
 								src="./images/nikolai.jpg"
 								alt="Николай Тарасов"
-								width="270"
-								height="260"
 							/>
 							<div class="team__info">
 								<h3 class="team__title">Николай Тарасов</h3>
@@ -309,8 +363,6 @@
 								class="team__image"
 								src="./images/mihail.jpg"
 								alt="Михаил Ермаков"
-								width="270"
-								height="260"
 							/>
 							<div class="team__info">
 								<h3 class="team__title">Михаил Ермаков</h3>
@@ -599,5 +651,6 @@
 			</div>
 		</div>
 		<script src="./modal.js"></script>
+		<script src="./mobile-menu.js"></script>
 	</body>
 </html>

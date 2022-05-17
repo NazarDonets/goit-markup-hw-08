@@ -1,11 +1,12 @@
-@use "../utils/variables";
+@use '../utils/variables' as v;
+@use '../utils/breakpoints' as *;
 
 .hero {
-	max-width: 1600px;
-	padding-top: 200px;
-	padding-bottom: 200px;
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 118px;
+	padding-bottom: 118px;
+	max-width: 1600px;
 	background: url(./../../images/hero.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -13,15 +14,34 @@
 	background-color: rgba(47, 48, 58, 0.4);
 	background-blend-mode: overlay;
 	text-align: center;
+
+	@include desktop-bg {
+		padding-top: 200px;
+		padding-bottom: 200px;
+	}
+}
+
+.container__hero {
+	max-width: 360px;
+	padding-left: 0;
+	padding-right: 0;
+
+	@include desktop-bg {
+		max-width: 696px;
+	}
 }
 
 .hero__title {
 	text-align: center;
-	color: variables.$color-white;
-	font-weight: 900;
-	font-size: 44px;
-	line-height: 1.36;
+	color: v.$color-white;
+	font-size: 26px;
+	line-height: 1.62;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
 	margin: 0 0 30px 0;
+
+	@include desktop-bg {
+		font-weight: 900;
+		font-size: 44px;
+	}
 }

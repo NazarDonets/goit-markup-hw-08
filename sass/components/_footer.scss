@@ -1,14 +1,21 @@
-@use "../utils/variables";
+@use '../utils/variables' as v;
+@use '../utils/breakpoints' as *;
 
 .footer {
 	padding-top: 60px;
 	padding-bottom: 60px;
-	background-color: variables.$color-dark-bg;
+	background-color: v.$color-dark-bg;
 }
 
 .footer-content {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: baseline;
+	justify-content: center;
+
+	@include desktop-bg {
+		justify-content: left;
+	}
 }
 
 .footer-content__socials-link {
@@ -18,7 +25,7 @@
 	width: 44px;
 	height: 44px;
 	border-radius: 50%;
-	transition: background-color variables.$animation-type1, color variables.$animation-type1;
+	transition: background-color v.$animation-type1, color v.$animation-type1;
 
 	&:not(:last-child) {
 		margin-right: 10px;
@@ -26,8 +33,8 @@
 
 	&:hover,
 	&:focus {
-		background-color: variables.$color-brand;
-		color: variables.$color-white;
+		background-color: v.$color-brand;
+		color: v.$color-white;
 	}
 }
 
@@ -37,36 +44,87 @@
 }
 
 .footer-content__contacts-block {
-	margin-right: 70px;
+	flex: 100%;
+	margin-bottom: 60px;
+
+	@include tablet {
+		flex: 50%;
+	}
+
+	@include desktop-bg {
+		flex: 0;
+		flex-basis: auto;
+		margin-right: 70px;
+		margin-bottom: 0;
+	}
+}
+
+.footer-content__socials-block {
+	flex: 100%;
+	margin-bottom: 60px;
+	text-align: center;
+
+	@include tablet {
+		flex: 50%;
+	}
+
+	@include desktop-bg {
+		flex: 0;
+		text-align: start;
+	}
+}
+
+.footer-content__socials-list {
+	justify-content: center;
+}
+
+.footer-contacts__list {
+	text-align: center;
+
+	@include desktop-bg {
+		text-align: start;
+	}
 }
 
 .footer .logo {
 	margin-bottom: 20px;
+	margin-right: 0;
+	text-align: center;
+
+	@include desktop-bg {
+		text-align: start;
+	}
 }
 
 .footer__address {
 	font-style: normal;
-	color: variables.$color-white;
+	color: v.$color-white;
 }
 
 .footer-contacts__link {
-	color: variables.$color-light-grey;
-	transition: color variables.$animation-type1;
+	color: v.$color-light-grey;
+	transition: color v.$animation-type1;
 
 	&:hover,
 	&:focus {
-		color: variables.$color-brand;
+		color: v.$color-brand;
 	}
 }
 
 .footer-content__socials-cta-text,
 .newsletter-form__label {
+	flex: 100%;
+	justify-content: center;
 	font-weight: 700;
 	font-size: 14px;
 	line-height: 1.14;
 	text-transform: uppercase;
 	color: #ffffff;
 	margin: 0 0 20px 0;
+
+	@include desktop-bg {
+		justify-content: start;
+	}
 }
 
 .footer-content__socials-list {
@@ -78,12 +136,12 @@
 }
 
 .footer-content__socials-link {
-	background-color: variables.$color-icon-footer-inactive;
-	color: variables.$color-white;
+	background-color: v.$color-icon-footer-inactive;
+	color: v.$color-white;
 }
 
 .footer-contacts__item:first-child .footer-contacts__link {
-	color: variables.$color-section-alternate-bg;
+	color: v.$color-section-alternate-bg;
 }
 
 .footer-contacts__item:not(:last-child) {
@@ -91,13 +149,18 @@
 }
 
 .footer-content__newsletter-form {
-	max-width: 570px;
-	margin-left: auto;
+	max-width: 450px;
+
+	@include desktop-bg {
+		max-width: 570px;
+		margin-left: auto;
+	}
 }
 
 .newsletter-form__group {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .newsletter-form__label {
@@ -105,15 +168,15 @@
 }
 
 .newsletter-form__input-field {
+	flex: 100%;
 	padding: 0 16px;
-	margin-right: 12px;
-	width: 358px;
+	margin-bottom: 20px;
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 	border-radius: 4px;
 	height: 50px;
 	background-color: transparent;
-	transition: border-color variables.$animation-type1;
+	transition: border-color v.$animation-type1;
 	font-size: 16px;
 	line-height: 1.25;
 	color: rgba(255, 255, 255, 0.6);
@@ -122,7 +185,14 @@
 	&:hover,
 	&:focus-within {
 		outline: none;
-		border-color: variables.$color-brand;
+		border-color: v.$color-brand;
+	}
+
+	@include desktop-bg {
+		flex: 0;
+		flex-grow: 1;
+		margin-right: 12px;
+		margin-bottom: 0;
 	}
 }
 
