@@ -11,11 +11,8 @@
 		menuBtnRef.setAttribute('aria-expanded', !expanded);
 
 		mobileMenuRef.classList.toggle('mobile-menu--is-open');
+		body.classList.toggle('body--scroll-hidden');
 
-		body.addEventListener('click', toggleScrollOff);
-
-		function toggleScrollOff() {
-			body.classList.toggle('body--scroll-hidden');
-		}
+		menuBtnRef.addEventListener('click', toggleScrollOff);
 	});
 })();
