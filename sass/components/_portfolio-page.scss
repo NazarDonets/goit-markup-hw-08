@@ -5,9 +5,10 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 8px;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 
 	@include desktop-sm {
+		margin-bottom: 50px;
 		justify-content: center;
 	}
 }
