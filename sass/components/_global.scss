@@ -18,6 +18,10 @@ body {
 	overflow-y: hidden;
 }
 
+.body--scroll-hidden::-webkit-scrollbar {
+	display: none;
+}
+
 main {
 	@include mobile {
 		margin-top: 60px;
