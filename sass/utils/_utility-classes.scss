@@ -1,4 +1,4 @@
-@use "variables";
+@use 'variables';
 
 .section__title--hidden {
 	position: absolute;
@@ -19,4 +19,14 @@
 
 .section--no-padding-top {
 	padding-top: 0;
+}
+
+.body--scroll-hidden {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	overflow-y: hidden;
+}
+
+.body--scroll-hidden::-webkit-scrollbar {
+	display: none;
 }

@@ -12,16 +12,6 @@ body {
 	letter-spacing: 0.03em;
 }
 
-.body--scroll-hidden {
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-	overflow-y: hidden;
-}
-
-.body--scroll-hidden::-webkit-scrollbar {
-	display: none;
-}
-
 main {
 	@include mobile {
 		margin-top: 60px;
