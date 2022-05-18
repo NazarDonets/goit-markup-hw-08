@@ -13,8 +13,10 @@ body {
 }
 
 main {
-	@include mobile {
-		margin-top: 60px;
+	margin-top: 60px;
+
+	@include desktop-sm {
+		margin-top: 80px;
 	}
 }
 
