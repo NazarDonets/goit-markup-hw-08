@@ -44,11 +44,10 @@
 }
 
 .portfolio-projects__item {
-	max-width: 100%;
+	flex: 100%;
 
 	@include desktop-sm {
 		flex: calc(50% - 30px);
-		max-width: calc(50% - 15px);
 	}
 
 	@include desktop-bg {
