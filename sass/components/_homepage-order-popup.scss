@@ -1,4 +1,5 @@
 @use '../utils/variables' as v;
+@use '../utils/breakpoints' as *;
 
 .backdrop-area {
 	position: fixed;
@@ -21,11 +22,15 @@
 
 .order-popup {
 	position: relative;
-	max-width: 528px;
+	max-width: 450px;
 	padding: 40px;
 	background: v.$color-white;
 	box-shadow: v.$box-shadow-card-popup;
 	border-radius: 4px;
+
+	@include desktop-sm {
+		max-width: 528px;
+	}
 }
 
 .backdrop-area.backdrop-area--hidden > .order-popup {
@@ -65,9 +70,13 @@
 	margin-bottom: 30px;
 	font-weight: 700;
 	font-size: 20px;
-	line-height: 1.15;
+	line-height: 1.5;
 	text-align: center;
 	letter-spacing: 0.03em;
+
+	@include desktop-sm {
+		line-height: 1.15;
+	}
 }
 
 .order-form__group {
@@ -222,10 +231,15 @@
 
 .order-form__input-checkbox-label {
 	font-weight: 400;
-	font-size: 14px;
-	line-height: 1.71;
+	font-size: 12px;
+	line-height: 1.16;
 	letter-spacing: 0.03em;
 	color: v.$color-light-grey;
+
+	@include desktop-sm {
+		font-size: 14px;
+		line-height: 1.71;
+	}
 }
 
 .order-form__consent-link {
