@@ -28,3 +28,15 @@ $breakpoints: (
 		@content;
 	}
 }
+
+@mixin mobile-display {
+	@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+		@content;
+	}
+}
+
+@mixin retina-display {
+	@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		@content;
+	}
+}
