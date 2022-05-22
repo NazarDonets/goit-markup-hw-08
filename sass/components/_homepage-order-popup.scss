@@ -13,6 +13,11 @@
 	background-color: v.$color-backdrop-overlay;
 	opacity: 1;
 	transition: opacity v.$animation-type1;
+
+	@include mobile {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
 }
 
 .backdrop-area--hidden {

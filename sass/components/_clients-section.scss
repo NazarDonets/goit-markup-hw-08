@@ -12,7 +12,11 @@
 	flex: calc(50% - 30px);
 
 	@include tablet {
-		flex: 33%;
+		flex: calc(50% - 30px);
+	}
+
+	@include desktop-sm {
+		flex: calc(33% - 60px);
 	}
 
 	@include desktop-bg {

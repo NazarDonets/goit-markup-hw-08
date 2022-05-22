@@ -5,11 +5,15 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 8px;
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 
 	@include desktop-sm {
-		margin-bottom: 50px;
+		margin-bottom: 30px;
 		justify-content: center;
+	}
+
+	@include desktop-bg {
+		margin-bottom: 50px;
 	}
 }
 
@@ -47,16 +51,20 @@
 	flex: 100%;
 
 	@include desktop-sm {
+		max-width: 354px;
 		flex: calc(50% - 30px);
 	}
 
 	@include desktop-bg {
+		max-width: 370px;
 		flex: calc(33% - 60px);
 	}
 }
 
 .portfolio-projects__link {
-	display: block;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 	transition: box-shadow v.$animation-type1;
 
 	&:hover,
@@ -76,7 +84,6 @@
 }
 
 .portfolio-projects__img {
-	width: 100%;
 	height: 294px;
 	object-fit: cover;
 	object-position: center;
@@ -95,6 +102,9 @@
 }
 
 .portfolio-projects__content-box {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 	padding: 20px 24px;
 	border-right: 1px solid v.$color-light-grey-2;
 	border-bottom: 1px solid v.$color-light-grey-2;

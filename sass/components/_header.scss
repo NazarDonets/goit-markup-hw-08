@@ -19,9 +19,18 @@
 }
 
 .header__container {
+	position: relative;
 	width: 100%;
 	height: 100%;
 	display: flex;
+
+	@include desktop-sm {
+		width: 768px;
+	}
+
+	@include desktop-bg {
+		width: 1200px;
+	}
 }
 
 .header-nav,
@@ -41,7 +50,6 @@
 
 .logo {
 	display: block;
-	margin-right: 83px;
 	font-family: v.$font-logo;
 	font-weight: 700;
 	font-size: 26px;
@@ -54,6 +62,10 @@
 
 	&--white {
 		color: v.$color-white;
+	}
+
+	@include desktop-sm {
+		margin-right: 83px;
 	}
 }
 
@@ -93,21 +105,30 @@
 
 	@include desktop-sm {
 		display: flex;
-		flex-wrap: wrap;
-		width: min-content;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
 		margin-left: auto;
 	}
 
 	@include desktop-bg {
-		flex-wrap: nowrap;
+		flex-direction: row;
+		align-items: center;
 		width: auto;
 	}
 }
 
 .header-contacts__item {
+	@include desktop-sm {
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
 	@include desktop-bg {
 		&:not(:last-child) {
 			margin-right: 30px;
+			margin-bottom: 0;
 		}
 	}
 }
@@ -155,12 +176,12 @@
 }
 
 .hamburger-lines {
+	position: absolute;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	height: 26px;
 	width: 32px;
-	position: absolute;
 	top: 17px;
 	right: 15px;
 	z-index: 2;

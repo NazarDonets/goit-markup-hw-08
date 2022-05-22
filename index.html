@@ -24,7 +24,7 @@
 	</head>
 	<body data-body>
 		<header class="header">
-			<div class="container header__container">
+			<div class="header__container container">
 				<nav class="header-nav">
 					<a href="./index.html" class="logo"
 						>Web<span class="logo--black">Studio</span></a
@@ -130,7 +130,7 @@
 		</header>
 		<main>
 			<section class="hero">
-				<div class="container container__hero">
+				<div class="container__hero">
 					<h1 class="hero__title">Эффективные решения для вашего бизнеса</h1>
 					<button class="btn-main-cta" type="button" data-modal-open>
 						Заказать услугу
@@ -200,11 +200,7 @@
 							<img
 								class="what-we-do__image"
 								src="./images/img-1.jpg"
-								srcset="
-									./images/img-1.jpg,
-									./images/img-1@1.5x.jpg 1.5x,
-									./images/img-1@2x.jpg   2x
-								"
+								srcset="./images/img-1.jpg, ./images/img-1@2x.jpg 2x"
 								alt="написание кода"
 							/>
 							<div class="what-we-do__description-block">
@@ -217,11 +213,7 @@
 							<img
 								class="what-we-do__image"
 								src="./images/img-2.jpg"
-								srcset="
-									./images/img-2.jpg,
-									./images/img-2@1.5x.jpg 1.5x,
-									./images/img-2@2x.jpg   2x
-								"
+								srcset="./images/img-2.jpg, ./images/img-2@2x.jpg 2x"
 								alt="разработка мобильных интерфейсов"
 							/>
 							<div class="what-we-do__description-block">
@@ -232,11 +224,7 @@
 							<img
 								class="what-we-do__image"
 								src="./images/img-3.jpg"
-								srcset="
-									./images/img-3.jpg,
-									./images/img-3@1.5x.jpg 1.5x,
-									./images/img-3@2x.jpg   2x
-								"
+								srcset="./images/img-3.jpg, ./images/img-3@2x.jpg 2x"
 								alt="работа с цветом"
 							/>
 							<div class="what-we-do__description-block">
@@ -251,12 +239,35 @@
 					<h2 class="section__title">Наша команда</h2>
 					<ul class="team">
 						<li class="team__item">
-							<img
-								class="team__image"
-								src="./images/igor.jpg"
-								srcset="./images/igor@1-5x.jpg 1.5x, ./images/igor@2x.jpg 2x"
-								alt="Игорь Демьяненко"
-							/>
+							<picture>
+								<source
+									srcset="
+										./images/igor-mobile-450w@1x.jpg 1x,
+										./images/igor-mobile-450w@2x.jpg 2x
+									"
+									media="(max-width: 767px)"
+								/>
+								<source
+									srcset="
+										./images/igor-tablet-354w@1x.jpg 1x,
+										./images/igor-tablet-354w@2x.jpg 2x
+									"
+									media="(max-width: 1199px)"
+								/>
+								<source
+									srcset="
+										./images/igor-desktop-270w@1x.jpg 1x,
+										./images/igor-desktop-270w@2x.jpg 2x
+									"
+									media="(min-width: 1200px)"
+								/>
+								<img
+									class="team__image"
+									src="./images/igor-mobile-450w@1x.jpg"
+									srcset="./images/igor-mobile-450w@2x.jpg 2x"
+									alt="Игорь Демьяненко"
+								/>
+							</picture>
 							<div class="team__info">
 								<h3 class="team__title">Игорь Демьяненко</h3>
 								<p class="team__description">Product Designer</p>
@@ -293,16 +304,35 @@
 							</div>
 						</li>
 						<li class="team__item">
-							<img
-								class="team__image"
-								src="./images/olga.jpg"
-								srcset="
-									./images/olga.jpg,
-									./images/olga@1-5x.jpg 1.5x,
-									./images/olga@2x.jpg   2x
-								"
-								alt="Ольга Репина"
-							/>
+							<picture>
+								<source
+									srcset="
+										./images/olga-mobile-450w@1x.jpg 1x,
+										./images/olga-mobile-450w@2x.jpg 2x
+									"
+									media="(max-width: 767px)"
+								/>
+								<source
+									srcset="
+										./images/olga-tablet-354w@1x.jpg 1x,
+										./images/olga-tablet-354w@2x.jpg 2x
+									"
+									media="(max-width: 1199px)"
+								/>
+								<source
+									srcset="
+										./images/olga-desktop-270w@1x.jpg 1x,
+										./images/olga-desktop-270w@2x.jpg 2x
+									"
+									media="(min-width: 1200px)"
+								/>
+								<img
+									class="team__image"
+									src="./images/olga-mobile-450w@1x.jpg"
+									srcset="./images/igor-mobile-450w@2x.jpg 2x"
+									alt="Ольга Репина"
+								/>
+							</picture>
 							<div class="team__info">
 								<h3 class="team__title">Ольга Репина</h3>
 								<p class="team__description">Frontend Developer</p>
@@ -339,16 +369,35 @@
 							</div>
 						</li>
 						<li class="team__item">
-							<img
-								class="team__image"
-								src="./images/nikolai.jpg"
-								srcset="
-									./images/nikolai.jpg,
-									./images/nikolai@1-5x.jpg 1.5x,
-									./images/nikolai@2x.jpg   2x
-								"
-								alt="Николай Тарасов"
-							/>
+							<picture>
+								<source
+									srcset="
+										./images/nikolai-mobile-450w@1x.jpg 1x,
+										./images/nikolai-mobile-450w@2x.jpg 2x
+									"
+									media="(max-width: 767px)"
+								/>
+								<source
+									srcset="
+										./images/nikolai-tablet-354w@1x.jpg 1x,
+										./images/nikolai-tablet-354w@2x.jpg 2x
+									"
+									media="(max-width: 1199px)"
+								/>
+								<source
+									srcset="
+										./images/nikolai-desktop-270w@1x.jpg 1x,
+										./images/nikolai-desktop-270w@2x.jpg 2x
+									"
+									media="(min-width: 1200px)"
+								/>
+								<img
+									class="team__image"
+									src="./images/nikolai-mobile-450w@1x.jpg"
+									srcset="./images/igor-mobile-450w@2x.jpg 2x"
+									alt="Николай Тарасов"
+								/>
+							</picture>
 							<div class="team__info">
 								<h3 class="team__title">Николай Тарасов</h3>
 								<p class="team__description">Marketing</p>
@@ -385,16 +434,35 @@
 							</div>
 						</li>
 						<li class="team__item">
-							<img
-								class="team__image"
-								src="./images/mihail.jpg"
-								srcset="
-									./images/mihail.jpg,
-									./images/mihail@1-5x.jpg 1.5x,
-									./images/mihail@2x.jpg   2x
-								"
-								alt="Михаил Ермаков"
-							/>
+							<picture>
+								<source
+									srcset="
+										./images/mikhail-mobile-450w@1x.jpg 1x,
+										./images/mikhail-mobile-450w@2x.jpg 2x
+									"
+									media="(max-width: 767px)"
+								/>
+								<source
+									srcset="
+										./images/mikhail-tablet-354w@1x.jpg 1x,
+										./images/mikhail-tablet-354w@2x.jpg 2x
+									"
+									media="(max-width: 1199px)"
+								/>
+								<source
+									srcset="
+										./images/mikhail-desktop-270w@1x.jpg 1x,
+										./images/mikhail-desktop-270w@2x.jpg 2x
+									"
+									media="(min-width: 1200px)"
+								/>
+								<img
+									class="team__image"
+									src="./images/mikhail-mobile-450w@1x.jpg"
+									srcset="./images/igor-mobile-450w@2x.jpg 2x"
+									alt="Михаил Ермаков"
+								/>
+							</picture>
 							<div class="team__info">
 								<h3 class="team__title">Михаил Ермаков</h3>
 								<p class="team__description">UI Designer</p>

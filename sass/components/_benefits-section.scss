@@ -15,7 +15,7 @@
 		margin-bottom: 0;
 	}
 
-	@include tablet {
+	@include desktop-sm {
 		flex: calc(50% - 30px);
 	}
 

@@ -13,6 +13,10 @@
 	align-items: baseline;
 	justify-content: center;
 
+	@include desktop-sm {
+		justify-content: space-around;
+	}
+
 	@include desktop-bg {
 		justify-content: left;
 	}
@@ -47,15 +51,15 @@
 	flex: 100%;
 	margin-bottom: 60px;
 
-	@include tablet {
-		flex: 50%;
+	@include desktop-sm {
+		flex: unset;
+		margin-bottom: 0;
 	}
 
 	@include desktop-bg {
 		flex: 0;
 		flex-basis: auto;
 		margin-right: 70px;
-		margin-bottom: 0;
 	}
 }
 
@@ -64,8 +68,9 @@
 	margin-bottom: 60px;
 	text-align: center;
 
-	@include tablet {
-		flex: 50%;
+	@include desktop-sm {
+		flex: unset;
+		margin-bottom: 0;
 	}
 
 	@include desktop-bg {
@@ -151,8 +156,13 @@
 .footer-content__newsletter-form {
 	max-width: 450px;
 
+	@include desktop-sm {
+		margin-top: 60px;
+	}
+
 	@include desktop-bg {
 		max-width: 570px;
+		margin-top: 0;
 		margin-left: auto;
 	}
 }
